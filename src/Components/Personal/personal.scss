@@ -1,0 +1,53 @@
+.personal {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 13%;
+
+  &__flex {
+    flex: 1;
+  }
+
+  &__text {
+    padding: 40px 50px;
+    max-width: 500px;
+    font-family: "Jomolhari";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+  }
+
+  /* 🔹 Tablet */
+  @media (max-width: 992px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &__text {
+      max-width: 100%;
+      width: 100%;
+      padding: 30px 25px;
+      font-size: 17px;
+      line-height: 28px;
+    }
+  }
+
+  /* 🔹 Phone */
+  @media (max-width: 576px) {
+    gap: 0px;
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 26px;
+      padding: 20px;
+    }
+  }
+}

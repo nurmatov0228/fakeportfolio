@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css?family=Gilda+Display");
+
+.notfound {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  font-size: medium;
+  font-family: "Gilda Display", serif;
+  //   user-select: none;
+
+  /* Markazlash */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+
+  &__viewFull {
+    font-family: OCR-A;
+    color: orange;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  &__error {
+    max-width: 900px;
+    width: 100%;
+    animation: noise-3 1s linear infinite;
+  }
+
+  &__wrap {
+    margin: 0 auto;
+    height: auto;
+  }
+
+  &__404 code {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5;
+    word-break: break-word;
+    white-space: pre-wrap; // responsiveda satrlar buzilmasin
+  }
+
+  &__info {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    animation: noise-3 1s linear infinite;
+
+    &:before,
+    &:after {
+      content: "file not found";
+      font-family: OCR-A;
+      font-size: 3rem;
+      display: block;
+      color: white;
+      opacity: 0;
+      animation: noise-1 0.2s linear infinite;
+    }
+
+    &:after {
+      animation: noise-2 0.2s linear infinite;
+    }
+  }
+
+  span.blue {
+    color: #48beef;
+  }
+  span.comment {
+    color: #7f8c8d;
+  }
+  span.orange {
+    color: #f39c12;
+  }
+  span.green {
+    color: #33cc33;
+  }
+}
+
+// Animations
+@keyframes noise-1 {
+  0%,
+  20%,
+  40%,
+  60%,
+  70%,
+  90% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(-6px);
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateX(2px);
+  }
+}
+
+@keyframes noise-2 {
+  0%,
+  20%,
+  40%,
+  60%,
+  70%,
+  90% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(6px);
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateX(-2px);
+  }
+}
+
+@keyframes noise-3 {
+  0%,
+  3%,
+  5%,
+  42%,
+  44%,
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  4.3% {
+    opacity: 1;
+    transform: scaleY(4);
+  }
+  43% {
+    opacity: 1;
+    transform: scaleX(10) rotate(60deg);
+  }
+}
+
+// OCR font
+@font-face {
+  font-family: OCR-A;
+  src: url("data:font/woff;base64,d09GRgABAAAAAHBsAA8AAAAAt8QAAQBQ...")
+    format("woff");
+}
+
+/* 📱 Responsive */
+@media (max-width: 1024px) {
+  .notfound__404 code {
+    font-size: 0.9rem;
+  }
+  .notfound__info:before,
+  .notfound__info:after {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .notfound {
+    font-size: 0.9rem;
+  }
+  .notfound__viewFull {
+    font-size: 0.8rem;
+  }
+  .notfound__404 code {
+    font-size: 0.8rem;
+  }
+  .notfound__info:before,
+  .notfound__info:after {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .notfound {
+    font-size: 0.8rem;
+  }
+  .notfound__404 code {
+    font-size: 0.7rem;
+  }
+  .notfound__info:before,
+  .notfound__info:after {
+    font-size: 1.5rem;
+  }
+  .notfound__viewFull {
+    font-size: 0.7rem;
+  }
+}

@@ -1,0 +1,77 @@
+.skills {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px 55px;
+    width: 100%;
+    gap: 40px;
+  }
+
+  &__flex {
+    max-width: 405px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px 35px;
+    justify-content: center;
+  }
+
+  &__image {
+    max-width: 110px;
+    height: auto;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+
+  &__text {
+    width: 320px;
+    font-family: "Jomolhari";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: right;
+    color: #ffffff;
+  }
+
+  /* 🔹 Responsiveness */
+  @media (max-width: 992px) {
+    &__container {
+      padding: 30px;
+      gap: 30px;
+    }
+
+    &__text {
+      font-size: 18px;
+      line-height: 28px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 25px 20px;
+    }
+
+    &__flex {
+      max-width: 100%;
+      gap: 20px;
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 26px;
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+}

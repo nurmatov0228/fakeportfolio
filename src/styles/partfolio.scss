@@ -1,0 +1,17 @@
+.partfolio {
+  .myresume {
+    &__title {
+      width: 1000px;
+
+      @media (max-width: 1024px) {
+        width: 90%;
+      }
+      margin: 0 auto;
+      text-align: center;
+
+      @media (max-width: 600px) {
+        width: 100%;
+      }
+    }
+  }
+}
